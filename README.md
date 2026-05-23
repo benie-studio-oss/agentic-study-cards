@@ -4,6 +4,8 @@
 
 [简体中文](README.zh-CN.md)
 
+<img src="docs/assets/social-preview.png" alt="Agentic Study Cards social preview" width="100%">
+
 A mobile-first static study app designed to be maintained by an AI agent.
 Prepared for publication under `benie-studio-oss`.
 

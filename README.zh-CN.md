@@ -4,6 +4,8 @@
 
 [English](README.md)
 
+<img src="docs/assets/social-preview.png" alt="Agentic Study Cards social preview" width="100%">
+
 这是一个移动端优先的静态学习卡片 starter，设计目标是让用户把零散学习材料交给自己的 AI agent 维护，而不是手动整理每一张卡片。
 公开发布身份准备为 `benie-studio-oss`。
 
