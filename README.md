@@ -160,10 +160,5 @@ Card audio and text audio are optional.
 
 See `docs/PUBLIC_STARTER_DESIGN.md` for the fuller design, `docs/SCHEMA.md` for the editable JSON contract, and `docs/PUBLIC_RELEASE_CHECKLIST.md` before publishing a public repository.
 
-## Tiny Token Hat Tip
-
-No "buy me a coffee" button here. If this saves you time, buy Codex and GLM tokens instead.
-
-## Maintainer
-
-`benie-studio-oss <benie-studio@proton.me>`
+> [!NOTE]
+> No "buy me a coffee" button here. If this saves you time, buy Codex and GLM tokens instead. The machines are thirsty. 🤖🥤

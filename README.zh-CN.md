@@ -160,10 +160,5 @@ JSON 里统一使用 repo-relative 路径和正斜杠，例如 `data/decks/examp
 
 更多设计说明见 `docs/PUBLIC_STARTER_DESIGN.md`，JSON contract 见 `docs/SCHEMA.md`。发布公开仓库前可参考 `docs/PUBLIC_RELEASE_CHECKLIST.md`。
 
-## 小小 Token 彩蛋
-
-No "buy me a coffee" button here. If this saves you time, buy Codex and GLM tokens instead.
-
-## Maintainer
-
-`benie-studio-oss <benie-studio@proton.me>`
+> [!NOTE]
+> No "buy me a coffee" button here. If this saves you time, buy Codex and GLM tokens instead. The machines are thirsty. 🤖🥤
