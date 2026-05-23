@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Agentic Study Cards Social Preview</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #080c18;
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+    }
+
+    .preview {
+      position: relative;
+      overflow: hidden;
+      width: 1280px;
+      height: 640px;
+      color: #f5f8ff;
+      background:
+        radial-gradient(circle at 73% 14%, rgba(222, 232, 255, 0.32), transparent 19%),
+        radial-gradient(circle at 8% 52%, rgba(73, 98, 209, 0.34), transparent 28%),
+        radial-gradient(circle at 93% 85%, rgba(105, 158, 255, 0.2), transparent 25%),
+        linear-gradient(135deg, #0d1222, #151225);
+    }
+
+    .copy {
+      position: absolute;
+      z-index: 2;
+      left: 68px;
+      top: 76px;
+      width: 580px;
+    }
+
+    .eyebrow {
+      margin: 0 0 28px;
+      color: #a9c0ff;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 62px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .sub {
+      margin: 34px 0 0;
+      color: rgba(214, 224, 246, 0.84);
+      font-size: 28px;
+      line-height: 1.35;
+    }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 38px;
+      color: rgba(235, 242, 255, 0.94);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .pill {
+      min-width: 86px;
+      border: 1px solid rgba(225, 236, 255, 0.35);
+      border-radius: 999px;
+      padding: 10px 18px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .arrow {
+      color: #a9c0ff;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .note {
+      margin-top: 68px;
+      color: rgba(214, 224, 246, 0.78);
+      font-size: 22px;
+    }
+
+    .phone {
+      position: absolute;
+      overflow: hidden;
+      border: 8px solid rgba(228, 238, 255, 0.55);
+      border-radius: 26px;
+      background: rgba(220, 232, 255, 0.18);
+      box-shadow: 18px 24px 0 rgba(0, 0, 0, 0.34), 0 20px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    .phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(230, 239, 255, 0.12), transparent 40%),
+        #10162b;
+    }
+
+    .phone.library {
+      z-index: 2;
+      left: 810px;
+      top: 72px;
+      width: 288px;
+      height: 472px;
+    }
+
+    .phone.cards {
+      z-index: 3;
+      left: 650px;
+      top: 154px;
+      width: 266px;
+      height: 420px;
+    }
+
+    .phone.texts {
+      z-index: 4;
+      left: 970px;
+      top: 138px;
+      width: 266px;
+      height: 416px;
+    }
+  </style>
+</head>
+<body>
+  <main class="preview" aria-label="Agentic Study Cards social preview">
+    <section class="copy">
+      <p class="eyebrow">AGENTIC STUDY CARDS</p>
+      <h1>Agent-maintained<br>study cards</h1>
+      <p class="sub">Drop learning material into input/.<br>Agent extracts cards, texts, and audio.</p>
+      <div class="flow" aria-label="Workflow">
+        <span class="pill">input/</span>
+        <span class="arrow">-></span>
+        <span class="pill">agent</span>
+        <span class="arrow">-></span>
+        <span class="pill">JSON</span>
+        <span class="arrow">-></span>
+        <span class="pill">validate</span>
+        <span class="arrow">-></span>
+        <span class="pill">publish</span>
+      </div>
+      <p class="note">Human review stays in the loop before publish.</p>
+    </section>
+
+    <figure class="phone library">
+      <img src="screenshots/library-day.png" alt="">
+    </figure>
+    <figure class="phone cards">
+      <img src="screenshots/cards-start-night.png" alt="">
+    </figure>
+    <figure class="phone texts">
+      <img src="screenshots/text-reader-night.png" alt="">
+    </figure>
+  </main>
+</body>
+</html>

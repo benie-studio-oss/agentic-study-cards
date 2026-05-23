@@ -1,0 +1,22 @@
+{
+  "schema": "agentic-study-cards.catalog.v1",
+  "title": "Agentic Study Cards",
+  "subtitle": "Source-backed study decks maintained by agents.",
+  "decks": [
+    {
+      "id": "language-learning-sample",
+      "title": "Language Learning Sample",
+      "domain": "language-learning",
+      "description": "A small public sample for vocabulary, short texts, and listening practice.",
+      "file": "data/decks/language-learning-sample.json"
+    },
+    {
+      "id": "cloud-concepts-sample",
+      "title": "Cloud Concepts Sample",
+      "domain": "technical-certification",
+      "description": "A tiny certification-style deck for technical terms and scenario review.",
+      "file": "data/decks/cloud-concepts-sample.json"
+    }
+  ]
+}
+

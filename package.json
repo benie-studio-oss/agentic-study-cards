@@ -1,0 +1,27 @@
+{
+  "name": "agentic-study-cards",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A static study card app and agent-maintained learning pipeline starter.",
+  "author": "benie-studio-oss <benie-studio@proton.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benie-studio-oss/agentic-study-cards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benie-studio-oss/agentic-study-cards/issues"
+  },
+  "homepage": "https://github.com/benie-studio-oss/agentic-study-cards#readme",
+  "scripts": {
+    "validate": "node scripts/validate-content.js"
+  },
+  "keywords": [
+    "study-cards",
+    "study",
+    "learning",
+    "agents",
+    "agent-workflow",
+    "static-site"
+  ],
+  "license": "MIT"
+}

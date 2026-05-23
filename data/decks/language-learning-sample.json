@@ -1,0 +1,44 @@
+{
+  "schema": "agentic-study-cards.deck.v1",
+  "id": "language-learning-sample",
+  "title": "Language Learning Sample",
+  "domain": "language-learning",
+  "source": "Public hand-authored sample data",
+  "cards": [
+    {
+      "id": "fr-sample-1",
+      "front": "Je voudrais reserver une chambre.",
+      "back": "I would like to book a room.",
+      "detail": "A useful travel phrase. The agent should keep the phrase close to the source sentence instead of inventing a new one.",
+      "tags": ["travel", "phrase", "reservation"],
+      "sourceRefs": ["docs/sample-sources/sample-hotel-dialogue.txt#line=1"]
+    },
+    {
+      "id": "fr-sample-2",
+      "front": "une gare",
+      "back": "a train station",
+      "detail": "A noun card can keep article information attached when the target language needs it.",
+      "tags": ["transport", "noun"],
+      "sourceRefs": ["docs/sample-sources/sample-travel-note.md#transport"]
+    },
+    {
+      "id": "fr-sample-3",
+      "front": "partir",
+      "back": "to leave",
+      "detail": "A verb card can later add structured tables when the domain skill needs challenge mode.",
+      "tags": ["verb", "movement"],
+      "sourceRefs": ["docs/sample-sources/sample-travel-note.md#verbs"]
+    }
+  ],
+  "texts": [
+    {
+      "id": "travel-dialogue",
+      "title": "A Short Hotel Dialogue",
+      "source": "Public hand-authored sample data",
+      "body": "Bonjour, je voudrais reserver une chambre pour deux nuits.\nBien sur. Vous preferez une chambre simple ou double ?\nUne chambre double, s'il vous plait.",
+      "translation": "Hello, I would like to book a room for two nights.\nOf course. Do you prefer a single or double room?\nA double room, please.",
+      "speechLang": "fr-FR",
+      "sourceRefs": ["docs/sample-sources/sample-hotel-dialogue.txt"]
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic Study Cards</title>
+  <meta name="description" content="A static study card app maintained by AI agents.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-screen="library">
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Agentic Study Cards</p>
+      <h1 id="app-title">Study Cards</h1>
+      <p id="app-subtitle">Source-backed study decks maintained by agents.</p>
+    </div>
+    <button class="icon-button" id="refresh-button" type="button" aria-label="Reload content" title="Reload content">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 12a9 9 0 11-2.64-6.36"/>
+        <path d="M21 3v6h-6"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="app-shell">
+    <section class="screen active" id="screen-library" aria-labelledby="library-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Library</p>
+          <h2 id="library-title">Decks</h2>
+        </div>
+        <p class="metric" id="library-count">Loading</p>
+      </div>
+      <div class="deck-grid" id="deck-grid"></div>
+    </section>
+
+    <section class="screen" id="screen-cards" aria-labelledby="cards-title">
+      <div class="cards-view active" id="cards-setup-view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" id="cards-domain">Cards</p>
+            <h2 id="cards-title">Study</h2>
+          </div>
+          <p class="metric" id="setup-card-count">0 cards</p>
+        </div>
+
+        <div class="quick-start-panel">
+          <div class="batch-row" id="batch-row">
+            <button class="batch-button" data-batch="20" type="button">20</button>
+            <button class="batch-button" data-batch="50" type="button">50</button>
+            <button class="batch-button active" data-batch="0" type="button">All</button>
+          </div>
+          <button class="primary-button start-study-button" id="start-study-button" type="button">Start</button>
+          <button class="secondary-button view-all-button" id="view-all-cards" type="button">View All Cards</button>
+        </div>
+      </div>
+
+      <div class="cards-view" id="cards-session-view">
+        <div class="session-header">
+          <button class="back-button" id="back-to-card-setup" type="button">&larr; Back</button>
+          <p class="metric" id="cards-progress">0 / 0</p>
+        </div>
+
+        <article class="study-card" id="study-card" tabindex="0" role="button" aria-label="Flip card">
+          <div class="card-face card-front">
+            <p class="card-kicker" id="card-kicker">Tap to flip</p>
+            <h3 id="card-front">Choose a deck</h3>
+          </div>
+          <div class="card-face card-back">
+            <p class="card-kicker">Answer</p>
+            <h3 id="card-back">The answer will appear here.</h3>
+            <p id="card-detail"></p>
+            <div class="chip-row" id="card-tags"></div>
+            <div class="source-list" id="card-sources"></div>
+            <button class="secondary-button" id="card-audio-button" type="button">Play card audio</button>
+          </div>
+        </article>
+
+        <div class="card-actions">
+          <button class="arrow-button" id="prev-card" type="button" aria-label="Previous card">&lt;</button>
+          <div class="arrow-counter" id="card-nav-counter">0 / 0</div>
+          <button class="arrow-button" id="next-card" type="button" aria-label="Next card">&gt;</button>
+        </div>
+      </div>
+
+      <div class="cards-view" id="cards-list-view">
+        <div class="section-heading">
+          <div>
+            <button class="back-button" id="back-to-card-setup-from-list" type="button">&larr; Back</button>
+            <h2>All Cards</h2>
+          </div>
+          <p class="metric" id="match-count">0</p>
+        </div>
+        <div class="tool-row">
+          <label class="search-field">
+            <span>Search</span>
+            <input id="card-search" type="search" placeholder="keyword, tag, answer">
+          </label>
+        </div>
+        <div class="list-panel glass-panel">
+          <div class="compact-list" id="card-list"></div>
+        </div>
+      </div>
+
+      <div class="cards-view" id="cards-detail-view">
+        <div class="section-heading">
+          <div>
+            <button class="back-button" id="back-to-card-list" type="button">&larr; Back</button>
+            <h2>Card Detail</h2>
+          </div>
+          <p class="metric" id="card-detail-progress">0 / 0</p>
+        </div>
+        <div class="detail-panel glass-panel" id="card-detail-panel"></div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-texts" aria-labelledby="texts-title">
+      <div class="text-view active" id="text-directory-view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Texts</p>
+            <h2 id="texts-title">Reading and Listening</h2>
+          </div>
+          <p class="metric" id="texts-count">0 texts</p>
+        </div>
+        <div class="text-list glass-panel" id="text-list"></div>
+      </div>
+
+      <div class="text-view" id="text-reader-view">
+        <article class="reader glass-panel">
+          <button class="back-button" id="back-to-texts" type="button">&larr; Back</button>
+          <div class="reader-head">
+            <div>
+              <p class="eyebrow" id="text-source">No text selected</p>
+              <h3 id="text-title">Choose a text</h3>
+            </div>
+            <span class="audio-kind" id="text-audio-kind">No audio</span>
+          </div>
+
+          <div class="audio-bar">
+            <button class="secondary-button repeat-one-button" id="text-repeat-button" type="button" aria-pressed="false" aria-label="Repeat current text">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17 2l4 4-4 4"/>
+                <path d="M3 11V9a3 3 0 013-3h15"/>
+                <path d="M7 22l-4-4 4-4"/>
+                <path d="M21 13v2a3 3 0 01-3 3H3"/>
+              </svg>
+            </button>
+            <button class="primary-button" id="text-play-button" type="button">Play</button>
+            <div class="speed-menu-wrap">
+              <button class="speed-trigger" id="text-speed-button" type="button" aria-haspopup="listbox" aria-expanded="false">1.0x</button>
+              <div class="rate-menu" id="text-speed-menu" role="listbox" aria-label="Text audio speed">
+                <button class="rate-button" data-rate="0.5" type="button">0.5x</button>
+                <button class="rate-button active" data-rate="1" type="button">1.0x</button>
+                <button class="rate-button" data-rate="1.25" type="button">1.25x</button>
+                <button class="rate-button" data-rate="1.5" type="button">1.5x</button>
+                <button class="rate-button" data-rate="2" type="button">2.0x</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="audio-note" id="audio-note">Audio is optional. If a text has no file, the app can use browser speech for preview listening.</p>
+          <div class="reader-body" id="text-body"></div>
+          <div class="reader-translation" id="text-translation"></div>
+          <div class="source-list" id="text-sources"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-settings" aria-labelledby="settings-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Settings</p>
+          <h2 id="settings-title">Settings</h2>
+        </div>
+      </div>
+      <div class="settings-panel glass-panel">
+        <h3>Appearance</h3>
+        <div class="theme-row" id="theme-row"></div>
+      </div>
+      <div class="agent-panel settings-agent-panel">
+        <p class="eyebrow">Agent workflow</p>
+        <ol>
+          <li>Drop source material into <code>input/</code>.</li>
+          <li>Generate source-backed cards, texts, notes, and optional audio.</li>
+          <li>Validate content and referenced audio.</li>
+          <li>Ask for human confirmation before publish.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav glass-panel" aria-label="Primary">
+    <button class="nav-button active" data-screen="library" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+        <path d="M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5z"/>
+      </svg>
+      <span>Library</span>
+    </button>
+    <button class="nav-button" data-screen="cards" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M16 3H5a2 2 0 00-2 2v11"/>
+        <path d="M8 7h11a2 2 0 012 2v10a2 2 0 01-2 2H8a2 2 0 01-2-2V9a2 2 0 012-2z"/>
+      </svg>
+      <span>Cards</span>
+    </button>
+    <button class="nav-button" data-screen="texts" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+        <path d="M14 2v6h6"/>
+        <path d="M8 13h8"/>
+        <path d="M8 17h6"/>
+      </svg>
+      <span>Texts</span>
+    </button>
+    <button class="nav-button" data-screen="settings" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M12 15.5A3.5 3.5 0 1012 8a3.5 3.5 0 000 7.5z"/>
+        <path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 01-2.83 2.83l-.06-.06A1.7 1.7 0 0015 19.36a1.7 1.7 0 00-1 .14 1.7 1.7 0 00-1 1.55V21a2 2 0 01-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1-.14 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.7 1.7 0 004.64 15a1.7 1.7 0 00-.14-1 1.7 1.7 0 00-1.55-1H3a2 2 0 010-4h.09a1.7 1.7 0 001.55-1 1.7 1.7 0 00.14-1 1.7 1.7 0 00-.34-1.87l-.06-.06A2 2 0 017.2 2.24l.06.06A1.7 1.7 0 009 2.64a1.7 1.7 0 001-.14A1.7 1.7 0 0011 1h2a1.7 1.7 0 001 1.5 1.7 1.7 0 001 .14 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 012.83 2.83l-.06.06A1.7 1.7 0 0019.36 7c.04.35.02.69-.14 1A1.7 1.7 0 0021 9h.09a2 2 0 010 4H21a1.7 1.7 0 00-1.55 1c-.16.31-.18.65-.05 1z"/>
+      </svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

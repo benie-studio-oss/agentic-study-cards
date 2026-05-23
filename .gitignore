@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Raw learner material belongs here locally, but should not be published.
+input/*
+!input/.gitkeep
+
+# Local draft outputs that are useful during agent runs but not part of the app.
+notes/drafts/
+audio/drafts/
+

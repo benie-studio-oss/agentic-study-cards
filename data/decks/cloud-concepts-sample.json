@@ -1,0 +1,44 @@
+{
+  "schema": "agentic-study-cards.deck.v1",
+  "id": "cloud-concepts-sample",
+  "title": "Cloud Concepts Sample",
+  "domain": "technical-certification",
+  "source": "Public hand-authored sample data",
+  "cards": [
+    {
+      "id": "cloud-iaas",
+      "front": "What does IaaS stand for?",
+      "back": "Infrastructure as a Service",
+      "detail": "A cloud service model where compute, storage, and networking are rented instead of owned directly.",
+      "tags": ["cloud", "service-model"],
+      "sourceRefs": ["docs/sample-sources/sample-cloud-notes.md#iaas"]
+    },
+    {
+      "id": "cloud-rpo",
+      "front": "RPO",
+      "back": "Recovery Point Objective",
+      "detail": "The maximum acceptable amount of data loss measured in time.",
+      "tags": ["resilience", "backup"],
+      "sourceRefs": ["docs/sample-sources/sample-cloud-notes.md#resilience"]
+    },
+    {
+      "id": "cloud-least-privilege",
+      "front": "Least privilege",
+      "back": "Grant only the access required to perform a task.",
+      "detail": "A security principle that reduces blast radius when credentials or roles are misused.",
+      "tags": ["security", "iam"],
+      "sourceRefs": ["docs/sample-sources/sample-cloud-notes.md#iam"]
+    }
+  ],
+  "texts": [
+    {
+      "id": "shared-responsibility",
+      "title": "Shared Responsibility",
+      "source": "Public hand-authored sample data",
+      "body": "In cloud computing, security work is shared between the provider and the customer. The provider secures the underlying cloud infrastructure. The customer secures identities, data, configuration, and application behavior.",
+      "translation": "Use this text to practice explaining the boundary between provider-owned and customer-owned security responsibilities.",
+      "speechLang": "en-US",
+      "sourceRefs": ["docs/sample-sources/sample-cloud-notes.md#shared-responsibility"]
+    }
+  ]
+}
