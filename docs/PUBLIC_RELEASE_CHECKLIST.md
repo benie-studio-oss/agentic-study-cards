@@ -19,6 +19,8 @@ Use this before publishing the starter to a public GitHub repository.
   `https://github.com/benie-studio-oss/agentic-study-cards`.
 - Keep `AGENTS.md` at the repository root so code agents can orient themselves
   without reading the entire project first.
+- Keep `docs/skills/study-card-maintainer.md` and `docs/skills/markdown-to-deck.md`
+  copy-paste-ready for agent runtimes that do not have native skill loading.
 - Upload `docs/assets/social-preview.png` as the GitHub repository social
   preview. `docs/assets/social-preview.html` is the cross-platform layout
   template used to recreate it.

@@ -18,6 +18,9 @@ It is not meant to compete with full flashcard products. Its core promise is:
 - `assets/styles.css` contains the mobile-first liquid-glass UI, including day
   and moonlight night themes.
 - `data/decks/*.json` contains public sample data only.
+- `docs/skills/` contains the base maintainer skill, Markdown-to-deck skill,
+  and domain skills that can be pasted into agent runtimes without a separate
+  prompt folder.
 - `scripts/validate-content.js` validates the public `cards[]` and `texts[]`
   schema. It intentionally rejects `words[]`; vocabulary should be represented
   as `cards[]`.

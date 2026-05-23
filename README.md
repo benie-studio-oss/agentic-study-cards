@@ -32,10 +32,11 @@ Start here:
 1. Read `docs/AGENT_WORKFLOW.md`.
 2. Read `docs/SCHEMA.md`.
 3. Read `AGENTS.md` for repo-local operating rules.
-4. Use `docs/skills/` as optional domain guidance.
-5. Update only publishable artifacts under `data/` and optional audio under `audio/`.
-6. Run `node scripts/validate-content.js`.
-7. Ask the human before commit/publish.
+4. Use `docs/skills/study-card-maintainer.md` as the base skill.
+5. Add the closest domain skill from `docs/skills/`.
+6. Update only publishable artifacts under `data/` and optional audio under `audio/`.
+7. Run `node scripts/validate-content.js`.
+8. Ask the human before commit/publish.
 
 Important constraints:
 
@@ -52,7 +53,7 @@ Important constraints:
 - Generic `cards[]` and `texts[]` schemas for language learning, exam prep, technical certification, or a custom domain.
 - Optional card/text audio with source-vs-TTS metadata.
 - Text listening controls with single-text repeat and playback speed choices.
-- Model-neutral agent workflow docs and starter skill templates.
+- Model-neutral agent workflow docs and copy-paste-ready starter skills.
 - A no-dependency validation script for catalog, decks, required fields, and referenced audio files.
 
 ## Screenshots
@@ -84,7 +85,7 @@ npm run validate
 
 ## Platform
 
-This is not a Windows-only project. The app is plain static HTML/CSS/JS, and the validator uses only Node built-in modules.
+The app is plain static HTML/CSS/JS, and the validator uses only Node built-in modules.
 
 - macOS/Linux: `python3 -m http.server 4173`
 - Windows: `python -m http.server 4173`
@@ -101,7 +102,7 @@ Use repo-relative paths with forward slashes in JSON, such as `data/decks/exampl
 - `audio/` - optional card and text audio referenced by deck JSON.
 - `input/` - ignored inbox for raw user material.
 - `docs/` - public design, workflow, adapter, schema, and validation notes.
-- `docs/skills/` - optional starter skills for different study domains.
+- `docs/skills/` - base, Markdown, and domain skills that agents can follow.
 - `scripts/validate-content.js` - no-dependency content validator.
 
 ## Adapter Philosophy

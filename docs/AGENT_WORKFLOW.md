@@ -78,6 +78,8 @@ It is intentionally model-agnostic and deployment-agnostic.
 
 ## Optional Tracks
 Starter variants can reuse the same pipeline with different prompts, tags, and validation rules:
+- base study-card maintainer skill
+- Markdown-to-deck extraction skill
 - language learning decks
 - exam concept sets
 - technical certification notes
@@ -93,7 +95,7 @@ Starter variants can reuse the same pipeline with different prompts, tags, and v
 
 ## Handoff for Next Agent
 - Background: this starter is scoped as an agent-maintained learning pipeline with human-in-the-loop review, not a one-shot flashcard generator.
-- Current checkpoint: the app, schema docs, validation script, and public sample data are aligned around `cards[]`, `texts[]`, optional audio, and explicit approval before publish.
+- Current checkpoint: the app, schema docs, validation script, public sample data, and starter skills are aligned around `cards[]`, `texts[]`, optional audio, and explicit approval before publish.
 - Validation evidence: run `npm run validate`, `node --check assets/app.js`, and `node --check scripts/validate-content.js`.
 - Remaining risk: runnable agent-runtime adapters are documented as boundaries but not implemented.
 - Next priority: add one real adapter example only after choosing a target runtime and event payload shape.

@@ -9,7 +9,8 @@ It is intentionally small and file-based so many agent runtimes can adapt it.
 2. `docs/AGENT_WORKFLOW.md`
 3. `docs/SCHEMA.md`
 4. `docs/VALIDATION.md`
-5. `docs/ADAPTERS.md`
+5. `docs/skills/study-card-maintainer.md`
+6. `docs/ADAPTERS.md`
 
 ## Core Contract
 
@@ -18,6 +19,7 @@ It is intentionally small and file-based so many agent runtimes can adapt it.
 - `audio/` stores optional referenced audio.
 - `input/` is ignored and is only for local raw materials.
 - `docs/sample-sources/` contains sanitized public sample sources.
+- `docs/skills/` contains copy-paste-ready base and domain skills.
 
 ## Allowed Content Updates
 
